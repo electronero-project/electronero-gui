@@ -1,0 +1,2 @@
+var GUI_VERSION = "v0.12.0.0-8-gc94ed65"
+var GUI_MONERO_VERSION = "v0.12.0.0"
