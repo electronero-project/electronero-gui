@@ -1,4 +1,7 @@
-
 [submodule "monero"]
 	path = monero
 	url = https://github.com/monero-project/monero
+[submodule "electronero"]
+	path = electronero
+	url = https://github.com/shopglobal/electronero
+	branch = nettype
