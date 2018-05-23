@@ -1,2 +1,0 @@
-2018-05-23 03:45:05.607	24108	INFO 	logging	contrib/epee/src/mlog.cpp:185	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO,msgwriter:INFO
-2018-05-23 03:45:16.106	24108	WARN 	net.http	src/common/util.cpp:627	Failed to determine whether address '' is local, assuming not
