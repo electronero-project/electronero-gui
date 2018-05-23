@@ -30,7 +30,7 @@ import QtQuick 2.0
 import "../components"
 
 Rectangle {
-    color: "#F0EEEE"
+    color: "transparent"
 
     SearchInput {
         id: searchInput
@@ -87,10 +87,10 @@ Rectangle {
             id: sendButton
             width: 60
             text: qsTr("SEND")
-            shadowReleasedColor: "#FF4304"
-            shadowPressedColor: "#B32D00"
-            releasedColor: "#FF6C3C"
-            pressedColor: "#FF4304"
+            shadowReleasedColor: "#4C2161"
+            shadowPressedColor: "#3E045A"
+            releasedColor: "#9F6DBD"
+            pressedColor: "#4C2161"
         }
 
         Text {
@@ -99,7 +99,7 @@ Rectangle {
             font.pixelSize: 12
             color: "#545454"
             textFormat: Text.RichText
-            text: qsTr("<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style>\
+            text: qsTr("<style type='text/css'>a {text-decoration: none; color: #9F6DBD; font-size: 14px;}</style>\
                         looking for security level and address book? go to <a href='#'>Transfer</a> tab")
                      + translationManager.emptyString
             font.underline: false
@@ -120,7 +120,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.top: parent.top
             height: 1
-            color: "#DBDBDB"
+            color: "#E8E7E7"
         }
 
         ListModel {

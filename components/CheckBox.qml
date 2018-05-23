@@ -56,8 +56,8 @@ RowLayout {
             height: checkBox.height - 1
             radius: 3
             y: 0
-            color: "transparent"
-            border.color: checkBox.checked ? Qt.rgba(1, 1, 1, 0.35) : Qt.rgba(1, 1, 1, 0.25)
+            color: "#E8E7E7"
+            
         }
 
         Rectangle {

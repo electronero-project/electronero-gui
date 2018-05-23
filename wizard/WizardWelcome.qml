@@ -70,14 +70,14 @@ ColumnLayout {
             color: "#3F3F3F"
             wrapMode: Text.Wrap
             horizontalAlignment: Text.AlignHCenter
-            text: qsTr("Welcome to Monero!") + translationManager.emptyString
+            text: qsTr("Welcome to Electronero!") + translationManager.emptyString
         }
 
         Text {
             Layout.fillWidth: true
             font.family: "Arial"
             font.pixelSize: 18 * scaleRatio
-            color: "#4A4646"
+            color: "#484545"
             wrapMode: Text.Wrap
             horizontalAlignment: Text.AlignHCenter
             text: qsTr("Please choose a language and regional format.") + translationManager.emptyString
@@ -139,7 +139,7 @@ ColumnLayout {
 //                    anchors.centerIn: parent
                     radius: 30 * scaleRatio
                     Layout.alignment: Qt.AlignHCenter
-                    color: gridView.currentIndex === index ? "#DBDBDB" : "#FFFFFF"
+                    color: gridView.currentIndex === index ? "#E8E7E7" : "#FFFFFF"
                     Image {
                         anchors.fill: parent
                         source: flag

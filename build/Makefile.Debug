@@ -16,8 +16,8 @@ CFLAGS        = -fno-keep-inline-dllexport -march=nocona -mtune=core2 -Wa,-mbig-
 CXXFLAGS      = -fno-keep-inline-dllexport -march=nocona -mtune=core2 -Wa,-mbig-obj -fPIC -fstack-protector -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -g -std=gnu++11 -Wall -W -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I../../monero-gui -I. -I../monero/include -I../src/libwalletqt -I../src/QR-Code-generator -I../src -I../monero/src -isystem C:/Dependancies/git-windows-sdk/mingw64/include/QtQuick -isystem C:/Dependancies/git-windows-sdk/mingw64/include/QtWidgets -isystem C:/Dependancies/git-windows-sdk/mingw64/include/QtGui -isystem C:/Dependancies/git-windows-sdk/mingw64/include/QtQml -isystem C:/Dependancies/git-windows-sdk/mingw64/include/QtNetwork -isystem C:/Dependancies/git-windows-sdk/mingw64/include/QtCore -Idebug -isystem C:/Dependancies/git-windows-sdk/mingw64/include -IC:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/win32-g++ 
 LINKER      =        g++
-LFLAGS        =        -fstack-protector -Wl,--stack,4194304 -Wl,--dynamicbase -Wl,--nxcompat -Wl,-subsystem,windows -mthreads
-LIBS        =        -lglu32 -lopengl32 -luser32 -lmingw32 -LC:/Dependancies/git-windows-sdk/mingw64/lib C:/Dependancies/git-windows-sdk/mingw64/lib/libqtmaind.a -lshell32 -LC:/code/cryptonote-website/electronero/space/web/wallet-bitshares/monero-gui/monero/lib -lwallet_merged -llmdb -lepee -lunbound -leasylogging -Lc:/msys64/mingw64/lib -L/mingw64/lib -Lc:/msys64/mingw64/boost/lib -L/mingw64/boost/lib -Wl,-Bstatic -lboost_serialization-mt -lboost_thread-mt -lboost_system-mt -lboost_date_time-mt -lboost_filesystem-mt -lboost_regex-mt -lboost_chrono-mt -lboost_program_options-mt -lboost_locale-mt -licuio -licuin -licuuc -licudt -licutu -liconv -lssl -lcrypto -Wl,-Bdynamic -lws2_32 -lwsock32 -lIphlpapi -lgdi32 C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Quickd.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Widgetsd.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Guid.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Qmld.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Networkd.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Cored.dll.a 
+LFLAGS        =        -fstack-protector -Wl,--stack,4194304 -Wl,--dynamicbase -Wl,--nxcompat -static -Wl,-subsystem,windows -mthreads
+LIBS        =        -lglu32 -lopengl32 -luser32 -lmingw32 -LC:/Dependancies/git-windows-sdk/mingw64/lib C:/Dependancies/git-windows-sdk/mingw64/lib/libqtmaind.a -lshell32 -LC:/code/cryptonote-website/electronero/space/web/wallet-bitshares/monero-gui/monero/lib -lwallet_merged -llmdb -lepee -lunbound -leasylogging -Lc:/msys64/mingw64/lib -L/mingw64/lib -Lc:/msys64/mingw64/boost/lib -L/mingw64/boost/lib -Wl,-Bstatic -lboost_serialization-mt -lboost_thread-mt -lboost_system-mt -lboost_date_time-mt -lboost_filesystem-mt -lboost_regex-mt -lboost_chrono-mt -lboost_program_options-mt -lboost_locale-mt -lssl -lcrypto -Wl,-Bdynamic -lws2_32 -lwsock32 -lIphlpapi -lgdi32 C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Quickd.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Widgetsd.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Guid.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Qmld.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Networkd.dll.a C:/Dependancies/git-windows-sdk/mingw64/lib/libQt5Cored.dll.a 
 QMAKE         = C:/Dependancies/git-windows-sdk/mingw64/bin/qmake.exe
 IDC           = idc
 IDL           = midl
@@ -209,7 +209,7 @@ debug/monero-core_res.o: ../monero-core.rc
 	windres -i ../monero-core.rc -o debug/monero-core_res.o --include-dir=./.. $(DEFINES)
 
 qmake: FORCE
-	@$(QMAKE) -o Makefile.Debug ../monero-wallet-gui.pro CONFIG+=release
+	@$(QMAKE) -o Makefile.Debug ../monero-wallet-gui.pro 'CONFIG+=release static'
 
 qmake_all: FORCE
 

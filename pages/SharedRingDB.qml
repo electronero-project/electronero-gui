@@ -87,7 +87,7 @@ Rectangle {
 
         Text {
             text: qsTr("This page allows you to interact with the shared ring database.<br>" +
-                       "This database is meant for use by Monero wallets as well as wallets from Monero clones which reuse the Monero keys.") + translationManager.emptyString
+                       "This database is meant for use by Electronero wallets as well as wallets from Monero clones which reuse the Monero keys.") + translationManager.emptyString
             wrapMode: Text.Wrap
             Layout.fillWidth: true;
             color: Style.defaultFontColor
@@ -95,7 +95,7 @@ Rectangle {
 
         Text {
             textFormat: Text.RichText
-            text: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style>" +
+            text: "<style type='text/css'>a {text-decoration: none; color: #4C2161; font-size: 14px;}</style>" +
                   "<font size='+2'>" + qsTr("Blackballed outputs") + "</font>" + "<font size='2'> (</font><a href='#'>" + qsTr("help") + "</a><font size='2'>)</font><br>" +
                   qsTr("This sets which outputs are known to be spent, and thus not to be used as privacy placeholders in ring signatures.<br>") +
                   qsTr("You should only have to load a file when you want to refresh the list. Manual adding/removing is possible if needed.") + translationManager.emptyString
@@ -104,16 +104,16 @@ Rectangle {
             onLinkActivated: {
                 sharedRingDBDialog.title  = qsTr("Blackballed outputs") + translationManager.emptyString;
                 sharedRingDBDialog.text = qsTr(
-                    "In order to obscure which inputs in a Monero transaction are being spent, a third party should not be able " +
+                    "In order to obscure which inputs in a Electronero transaction are being spent, a third party should not be able " +
                     "to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection " +
                     "afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being " +
                     "actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers " +
-                    "of privacy protection Monero uses.<br>" +
+                    "of privacy protection Electronero uses.<br>" +
                     "To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new " +
-                    "transactions. Such a list is maintained by the Monero project and is available on the getmonero.org website, " +
+                    "transactions. Such a list is maintained by the Electronero project and is available on the electronero.org website, " +
                     "and you can import this list here.<br>" +
-                    "Alternatively, you can scan the blockchain (and the blockchain of key-reusing Monero clones) yourself " +
-                    "using the monero-blockchain-blackball tool to create a list of known spent outputs.<br>"
+                    "Alternatively, you can scan the blockchain (and the blockchain of key-reusing Electronero clones) yourself " +
+                    "using the electronero-blockchain-blackball tool to create a list of known spent outputs.<br>"
                 )
                 sharedRingDBDialog.icon = StandardIcon.Information
                 sharedRingDBDialog.open()
@@ -222,7 +222,7 @@ Rectangle {
 
         Text {
             textFormat: Text.RichText
-            text: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style>" +
+            text: "<style type='text/css'>a {text-decoration: none; color: #4C2161; font-size: 14px;}</style>" +
                   "<font size='+2'>" + qsTr("Rings") + "</font>" + "<font size='2'> (</font><a href='#'>" + qsTr("help") + "</a><font size='2'>)</font><br>" +
                   qsTr("This records rings used by outputs spent on Monero on a key reusing chain, so that the same ring may be reused to avoid privacy issues.") + translationManager.emptyString
             wrapMode: Text.Wrap

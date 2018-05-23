@@ -153,7 +153,7 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 height: 10
                 opacity: 0
-                color: "black"
+                color: "#E8E7E7"
             }
 
             Label {
@@ -217,7 +217,7 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 height: 10
                 opacity: 0
-                color: "black"
+                color: "#E8E7E7"
             }
 
             // Ok/Cancel buttons

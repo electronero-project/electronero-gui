@@ -59,7 +59,7 @@ Rectangle {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         height: 1
-        color: "#808080"
+        color: "#E8E7E7"
     }
 
     Row {
@@ -69,7 +69,7 @@ Rectangle {
         Rectangle {
             height: 31
             width: 1
-            color: "#808080"
+            color: "#E8E7E7"
         }
 
         Repeater {
@@ -100,8 +100,8 @@ Rectangle {
                     font.pixelSize: 14
                     color: {
                         if(delegateArea.pressed)
-                            return "#FF4304"
-                        return index === header.activeSortColumn || delegateArea.containsMouse ? "white" : "#808080"
+                            return "#4C2161"
+                        return index === header.activeSortColumn || delegateArea.containsMouse ? "#9F6DBD" : "#4A4949"
                     }
                     text: qsTr(columnName) + translationManager.emptyString
                 }
@@ -194,7 +194,7 @@ Rectangle {
                     anchors.bottom: parent.bottom
                     anchors.right: parent.right
                     width: 1
-                    color: "#808080"
+                    color: "#E8E7E7"
                 }
             }
         }

@@ -37,8 +37,8 @@ Item {
     property bool expanded: false
     property date currentDate
     property bool showCurrentDate: true
-    property color backgroundColor : "#404040"
-    property color errorColor : "red"
+    property color backgroundColor : "#FFFFFF"
+    property color errorColor : "#E5E5E5"
     property bool error: false
     property alias inputLabel: inputLabel
 
@@ -136,7 +136,7 @@ Item {
             anchors.rightMargin: 4
             height: 16
             width: 1
-            color: "#808080"
+            color: "#E8E7E7"
             visible: datePicker.expanded
         }
 
@@ -255,7 +255,7 @@ Item {
         anchors.top: head.bottom
         color: "#FFFFFF"
         border.width: 1
-        border.color: "#DBDBDB"
+        border.color: "#E8E7E7"
         height: datePicker.expanded ? calendar.height + 2 : 0
         clip: true
         //radius: 4
@@ -304,7 +304,7 @@ Item {
                         font.bold: dayArea.pressed
                         text: styleData.date.getDate()
                         color: {
-                            if(!styleData.visibleMonth) return "#DBDBDB"
+                            if(!styleData.visibleMonth) return "#E8E7E7"
                             if(dayArea.pressed) return "#FFFFFF"
                             if(styleData.today) return "#FF6C3B"
                             return "#4A4848"
@@ -355,7 +355,7 @@ Item {
                         anchors.centerIn: parent
                         font.family: "Arial"
                         font.pixelSize: 12
-                        color: "#4A4646"
+                        color: "#484545"
                         text: styleData.title
                     }
 

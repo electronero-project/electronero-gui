@@ -47,10 +47,10 @@ Item {
 
         ListModel {
             id: dotsModel
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#FFE00A" }
-            ListElement { dotColor: "#DBDBDB" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#4C2161" }
+            ListElement { dotColor: "#E8E7E7" }
         }
 
         Repeater {
@@ -76,7 +76,7 @@ Item {
         wrapMode: Text.Wrap
         //renderType: Text.NativeRendering
         color: "#3F3F3F"
-        text: qsTr("We’re almost there - let’s just configure some Monero preferences") + translationManager.emptyString
+        text: qsTr("We’re almost there - let’s just configure some Electronero preferences") + translationManager.emptyString
     }
 
     Column {
@@ -97,8 +97,8 @@ Item {
                 text: qsTr("Kickstart the Monero blockchain?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
-                fontColor: "#4A4646"
+                background: "#F5F2F2"
+                fontColor: "#484545"
                 fontSize: 18
                 checked: true
             }
@@ -108,7 +108,7 @@ Item {
                 anchors.right: parent.right
                 font.family: "Arial"
                 font.pixelSize: 15
-                color: "#4A4646"
+                color: "#484545"
                 wrapMode: Text.Wrap
                 text: qsTr("It is very important to write it down as this is the only backup you will need for your wallet.")
                         + translationManager.emptyString
@@ -124,8 +124,8 @@ Item {
                 text: qsTr("Enable disk conservation mode?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
-                fontColor: "#4A4646"
+                background: "#F5F2F2"
+                fontColor: "#484545"
                 fontSize: 18
                 checked: true
             }
@@ -135,11 +135,11 @@ Item {
                 anchors.right: parent.right
                 font.family: "Arial"
                 font.pixelSize: 15
-                color: "#4A4646"
+                color: "#484545"
                 wrapMode: Text.Wrap
                 text: qsTr("Disk conservation mode uses substantially less disk-space, but the same amount of bandwidth as " +
-                           "a regular Monero instance. However, storing the full blockchain is beneficial to the security " +
-                           "of the Monero network. If you are on a device with limited disk space, then this option is appropriate for you.")
+                           "a regular Electronero instance. However, storing the full blockchain is beneficial to the security " +
+                           "of the Electronero network. If you are on a device with limited disk space, then this option is appropriate for you.")
                         + translationManager.emptyString
             }
         }
@@ -153,8 +153,8 @@ Item {
                 text: qsTr("Allow background mining?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
-                fontColor: "#4A4646"
+                background: "#F5F2F2"
+                fontColor: "#484545"
                 fontSize: 18
                 checked: true
             }
@@ -164,10 +164,10 @@ Item {
                 anchors.right: parent.right
                 font.family: "Arial"
                 font.pixelSize: 15
-                color: "#4A4646"
+                color: "#484545"
                 wrapMode: Text.Wrap
-                text: qsTr("Mining secures the Monero network, and also pays a small reward for the work done. This option " +
-                           "will let Monero mine when your computer is on mains power and is idle. It will stop mining when you continue working.")
+                text: qsTr("Mining secures the Electronero network, and also pays a small reward for the work done. This option " +
+                           "will let Electronero mine when your computer is on mains power and is idle. It will stop mining when you continue working.")
                         + translationManager.emptyString
             }
         }

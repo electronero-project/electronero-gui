@@ -65,10 +65,10 @@ ColumnLayout {
 
         ListModel {
             id: dotsModel
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#FFE00A" }
-            ListElement { dotColor: "#DBDBDB" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#4C2161" }
+            ListElement { dotColor: "#E8E7E7" }
         }
 
         Repeater {
@@ -108,7 +108,7 @@ ColumnLayout {
             font.pixelSize: 18 * scaleRatio
             wrapMode: Text.Wrap
             //renderType: Text.NativeRendering
-            color: "#4A4646"
+            color: "#484545"
             textFormat: Text.RichText
 //            horizontalAlignment: Text.AlignHCenter
             text: qsTr("To be able to communicate with the Monero network your wallet needs to be connected to a Monero node. For best privacy it's recommended to run your own node. \
@@ -126,7 +126,7 @@ ColumnLayout {
                 text: qsTr("Start a node automatically in background (recommended)") + translationManager.emptyString
                 checkedIcon: "../images/checkedBlackIcon.png"
                 background: "#FFFFFF"
-                fontColor: "#4A4646"
+                fontColor: "#484545"
                 fontSize: 16 * scaleRatio
                 checked: !appWindow.persistentSettings.useRemoteNode && !isAndroid && !isIOS
                 visible: !isAndroid && !isIOS
@@ -196,7 +196,7 @@ ColumnLayout {
                 daemonPortText: {
                     var node_split = persistentSettings.bootstrapNodeAddress.split(":");
                     if(node_split.length == 2){
-                        (node_split[1].trim() == "") ? "18081" : node_split[1];
+                        (node_split[1].trim() == "") ? "28888" : node_split[1];
                     } else {
                         return ""
                     }
@@ -211,7 +211,7 @@ ColumnLayout {
                 checkedIcon: "../images/checkedBlackIcon.png"
                 Layout.topMargin: 20 * scaleRatio
                 background: "#FFFFFF"
-                fontColor: "#4A4646"
+                fontColor: "#484545"
                 fontSize: 16 * scaleRatio
                 checked: appWindow.persistentSettings.useRemoteNode
                 onClicked: {

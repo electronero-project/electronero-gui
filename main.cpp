@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 //#endif
 
     // Log settings
-    Monero::Wallet::init(argv[0], "monero-wallet-gui");
+    Monero::Wallet::init(argv[0], "electronero-wallet-gui");
 //    qInstallMessageHandler(messageHandler);
 
     MainApp app(argc, argv);
@@ -89,8 +89,8 @@ int main(int argc, char *argv[])
     qDebug() << "app startd";
 
     app.setApplicationName("monero-core");
-    app.setOrganizationDomain("getmonero.org");
-    app.setOrganizationName("monero-project");
+    app.setOrganizationDomain("electronero.org");
+    app.setOrganizationName("electronero-project");
 
     #if defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
     app.setWindowIcon(QIcon(":/images/appicon.ico"));
@@ -173,6 +173,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("mainApp", &app);
 
+	engine.rootContext()->setContextProperty("qtRuntimeVersion", qVersion());
 // Exclude daemon manager from IOS
 #ifndef Q_OS_IOS
     DaemonManager * daemonManager = DaemonManager::instance(&arguments);
@@ -238,7 +239,7 @@ int main(int argc, char *argv[])
 
 
     if (!moneroAccountsRootDir.empty()) {
-        QString moneroAccountsDir = moneroAccountsRootDir.at(0) + "/Monero/wallets";
+        QString moneroAccountsDir = moneroAccountsRootDir.at(0) + "/Electronero/wallets";
         engine.rootContext()->setContextProperty("moneroAccountsDir", moneroAccountsDir);
     }
 

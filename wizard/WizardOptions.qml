@@ -72,7 +72,7 @@ ColumnLayout {
             color: "#3F3F3F"
             wrapMode: Text.Wrap
             horizontalAlignment: Text.AlignHCenter
-            text: qsTr("Welcome to Monero!") + translationManager.emptyString
+            text: qsTr("Welcome to Electronero!") + translationManager.emptyString
         }
 
         Text {
@@ -80,7 +80,7 @@ ColumnLayout {
             font.family: "Arial"
             font.pixelSize: 18 * scaleRatio
             //renderType: Text.NativeRendering
-            color: "#4A4646"
+            color: "#484545"
             wrapMode: Text.Wrap
             horizontalAlignment: Text.AlignHCenter
             text: qsTr("Please select one of the following options:") + translationManager.emptyString
@@ -109,7 +109,7 @@ ColumnLayout {
                 Layout.preferredHeight: page.buttonSize
                 Layout.preferredWidth: page.buttonSize
                 radius: page.buttonSize
-                color: createWalletArea.containsMouse ? "#DBDBDB" : "#FFFFFF"
+                color: createWalletArea.containsMouse ? "#E8E7E7" : "#FFFFFF"
 
 
                 Image {
@@ -154,7 +154,7 @@ ColumnLayout {
                 Layout.preferredHeight: page.buttonSize
                 Layout.preferredWidth:  page.buttonSize
                 radius: page.buttonSize
-                color: recoverWalletArea.containsMouse ? "#DBDBDB" : "#FFFFFF"
+                color: recoverWalletArea.containsMouse ? "#E8E7E7" : "#FFFFFF"
 
                 Image {
                     width: page.buttonImageSize
@@ -197,7 +197,7 @@ ColumnLayout {
                 Layout.preferredHeight: page.buttonSize
                 Layout.preferredWidth:  page.buttonSize
                 radius: page.buttonSize
-                color: openWalletArea.containsMouse ? "#DBDBDB" : "#FFFFFF"
+                color: openWalletArea.containsMouse ? "#E8E7E7" : "#FFFFFF"
 
                 Image {
                     width: page.buttonImageSize
@@ -246,7 +246,7 @@ ColumnLayout {
                 id: testNet
                 text: qsTr("Testnet") + translationManager.emptyString
                 background: "#FFFFFF"
-                fontColor: "#4A4646"
+                fontColor: "#484545"
                 fontSize: 16 * scaleRatio
                 checkedIcon: "../images/checkedBlackIcon.png"
                 uncheckedIcon: "../images/uncheckedIcon.png"

@@ -115,10 +115,10 @@ Rectangle {
 
             StandardButton {
                 id: rescanWalletbutton
-                shadowReleasedColor: "#FF4304"
-                shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
-                pressedColor: "#FF4304"
+                shadowReleasedColor: "#4C2161"
+                shadowPressedColor: "#3E045A"
+                releasedColor: "#9F6DBD"
+                pressedColor: "#4C2161"
                 text: qsTr("Rescan wallet cache") + translationManager.emptyString
                 onClicked: {
                     // Show confirmation dialog
@@ -629,14 +629,14 @@ Rectangle {
             id: guiMoneroVersion
             Layout.fillWidth: true
             font.pixelSize: 14
-            text: qsTr("Embedded Monero version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
+            text: qsTr("Embedded Electronero version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
         }
         TextBlock {
             id: restoreHeightText
             Layout.fillWidth: true
             font.pixelSize: 14
             textFormat: Text.RichText
-            property var txt: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C}</style>" + qsTr("Wallet creation height: ") + (currentWallet ? currentWallet.walletCreationHeight : "") + translationManager.emptyString
+            property var txt: "<style type='text/css'>a {text-decoration: none; color: #9F6DBD}</style>" + qsTr("Wallet creation height: ") + (currentWallet ? currentWallet.walletCreationHeight : "") + translationManager.emptyString
             property var linkTxt: qsTr(" <a href='#'>(Click to change)</a>") + translationManager.emptyString
             text: (typeof currentWallet == "undefined") ? "" : txt + linkTxt
 

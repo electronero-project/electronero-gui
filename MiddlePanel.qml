@@ -50,6 +50,7 @@ Rectangle {
     property string unlockedBalanceText
     property int minHeight: (appWindow.height > 800) ? appWindow.height : 800 * scaleRatio
     property alias contentHeight: mainFlickable.contentHeight
+    property alias flickable: mainFlickable
 //    property int headerHeight: header.height
 
     property Transfer transferView: Transfer { }
@@ -161,11 +162,11 @@ Rectangle {
         anchors.right: parent.right
 
 
-        Rectangle { height: 4; width: parent.width / 5; color: "#FFE00A" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#6B0072" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#FF6C3C" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#FFD781" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#FF4F41" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#4C2161" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#9F6DBD" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#4C2161" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#9F6DBD" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#4C2161" }
     }
 
     ColumnLayout {
@@ -226,7 +227,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         width: 1
-        color: "#313131"
+        color: "#E8E7E7"
     }
 
     /* connect "payment" click */

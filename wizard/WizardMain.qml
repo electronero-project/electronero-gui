@@ -62,7 +62,7 @@ ColumnLayout {
     signal wizardRestarted();
     signal useMoneroClicked()
     signal openWalletFromFileClicked()
-//    border.color: "#DBDBDB"
+//    border.color: "#E8E7E7"
 //    border.width: 1
 //    color: "#FFFFFF"
 
@@ -183,6 +183,15 @@ ColumnLayout {
             walletErrorDialog.text = qsTr("A wallet with same name already exists. Please change wallet name") + translationManager.emptyString;
             walletErrorDialog.open();
             return false;
+        }
+	
+	// Don't allow non ascii characters in path on windows platforms until supported by Wallet2	
+        if (isWindows) {	
+            if (!isAscii(path)) {	
+                walletErrorDialog.text = qsTr("Non-ASCII characters are not allowed in wallet path or account name")  + translationManager.emptyString;	
+                walletErrorDialog.open();	
+                return false;	
+            }	
         }
 
         return true;
@@ -317,7 +326,7 @@ ColumnLayout {
 
         width: 50 * scaleRatio; height: 50 * scaleRatio
         radius: 25
-        color: prevArea.containsMouse ? "#FF4304" : "#FF6C3C"
+        color: prevArea.containsMouse ? "#4C2161" : "#9F6DBD"
 
         Image {
             anchors.centerIn: parent
@@ -342,7 +351,7 @@ ColumnLayout {
         visible: currentPage > 1 && currentPage < pages.length - 1
         width: 50 * scaleRatio; height: 50 * scaleRatio
         radius: 25
-        color: enabled ? nextArea.containsMouse ? "#FF4304" : "#FF6C3C" : "#DBDBDB"
+        color: enabled ? nextArea.containsMouse ? "#4C2161" : "#9F6DBD" : "#E8E7E7"
 
 
         Image {
@@ -364,7 +373,7 @@ ColumnLayout {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.margins:  (isMobile) ? 20 * scaleRatio : 50 * scaleRatio
-        text: qsTr("USE MONERO") + translationManager.emptyString
+        text: qsTr("USE ELECTRONERO") + translationManager.emptyString
         visible: parent.paths[currentPath][currentPage] === finishPage
         onClicked: {
             wizard.applySettings();

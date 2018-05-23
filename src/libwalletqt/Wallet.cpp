@@ -724,7 +724,7 @@ QString Wallet::getDaemonLogPath() const
 
 QString Wallet::getWalletLogPath() const
 {
-    const QString filename("monero-wallet-gui.log");
+    const QString filename("electronero-wallet-gui.log");
 
 #ifdef Q_OS_MACOS
     return QStandardPaths::standardLocations(QStandardPaths::HomeLocation).at(0) + "/Library/Logs/" + filename;
@@ -864,6 +864,7 @@ Wallet::Wallet(Monero::Wallet *w, QObject *parent)
     m_addressBook = new AddressBook(m_walletImpl->addressBook(), this);
     m_subaddress = new Subaddress(m_walletImpl->subaddress(), this);
     m_walletImpl->setListener(new WalletListenerImpl(this));
+    
     m_connectionStatus = Wallet::ConnectionStatus_Disconnected;
     // start cache timers
     m_connectionStatusTime.restart();

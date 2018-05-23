@@ -210,6 +210,7 @@ Makefile: monero-wallet-gui.pro C:/Dependancies/git-windows-sdk/mingw64/share/qt
 		C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/qt_config.prf \
 		C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/win32-g++/qmake.conf \
 		C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/exclusive_builds.prf \
 		C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/toolchain.prf \
 		C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/default_pre.prf \
@@ -391,6 +392,7 @@ C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/qt_functions.
 C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/qt_config.prf:
 C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/win32-g++/qmake.conf:
 C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/exclusive_builds.prf:
 C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/toolchain.prf:
 C:/Dependancies/git-windows-sdk/mingw64/share/qt5/mkspecs/features/default_pre.prf:

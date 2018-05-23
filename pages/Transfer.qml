@@ -43,7 +43,7 @@ Rectangle {
     signal sweepUnmixableClicked()
 
     color: "transparent"
-    property string startLinkText: qsTr("<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style><font size='2'> (</font><a href='#'>Start daemon</a><font size='2'>)</font>") + translationManager.emptyString
+    property string startLinkText: qsTr("<style type='text/css'>a {text-decoration: none; color: #9F6DBD; font-size: 14px;}</style><font size='2'> (</font><a href='#'>Start daemon</a><font size='2'>)</font>") + translationManager.emptyString
     property bool showAdvanced: false
 
     Clipboard { id: clipboard }
@@ -235,10 +235,10 @@ Rectangle {
                   Layout.fillWidth: true
                   id: priorityDropdown
                   Layout.topMargin: 6
-                  shadowReleasedColor: "#FF4304"
-                  shadowPressedColor: "#B32D00"
-                  releasedColor: "#363636"
-                  pressedColor: "#202020"
+                  shadowReleasedColor: "#4C2161"
+                  shadowPressedColor: "#3E045A"
+                  releasedColor: "#9F6DBD"
+                  pressedColor: "#4C2161"
               }
           }
           // Make sure dropdown is on top
@@ -254,7 +254,7 @@ Rectangle {
               id: addressLine
               spacing: 0
               fontBold: true
-              labelText: qsTr("<style type='text/css'>a {text-decoration: none; color: #858585; font-size: 14px;}</style>\
+              labelText: qsTr("<style type='text/css'>a {text-decoration: none; color: #9F6DBD; font-size: 14px;}</style>\
                 Address <font size='2'>  ( </font> <a href='#'>Address book</a><font size='2'> )</font>")
                 + translationManager.emptyString
               labelButtonText: qsTr("Resolve") + translationManager.emptyString
@@ -603,7 +603,7 @@ Rectangle {
                 informationPopup.open();
             } else {
                 informationPopup.title = qsTr("Information") + translationManager.emptyString
-                informationPopup.text  = qsTr("Monero sent successfully") + translationManager.emptyString
+                informationPopup.text  = qsTr("Electronero sent successfully") + translationManager.emptyString
                 informationPopup.icon  = StandardIcon.Information
                 informationPopup.onCloseCallback = null
                 informationPopup.open();

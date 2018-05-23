@@ -61,10 +61,10 @@ Item {
 
         ListModel {
             id: dotsModel
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#36B05B" }
-            ListElement { dotColor: "#FFE00A" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#3CB15F" }
+            ListElement { dotColor: "#4C2161" }
         }
 
         Repeater {
@@ -90,7 +90,7 @@ Item {
         wrapMode: Text.Wrap
         //renderType: Text.NativeRendering
         color: "#3F3F3F"
-        text: qsTr("Monero development is solely supported by donations") + translationManager.emptyString
+        text: qsTr("Electronero development is solely supported by donations") + translationManager.emptyString
     }
 
     Column {
@@ -111,8 +111,8 @@ Item {
                 id: enableAutoDonationCheckBox
                 anchors.verticalCenter: parent.verticalCenter
                 text: qsTr("Enable auto-donations of?") + translationManager.emptyString
-                background: "#F0EEEE"
-                fontColor: "#4A4646"
+                background: "#F5F2F2"
+                fontColor: "#484545"
                 fontSize: 18
                 checked: true
             }
@@ -129,7 +129,7 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     font.family: "Arial"
                     font.pixelSize: 18
-                    color: "#6B0072"
+                    color: "#4C2161"
                     text: "50"
                     validator: IntValidator { bottom: 0; top: 100 }
                 }
@@ -139,7 +139,7 @@ Item {
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom
                     height: 1
-                    color: "#DBDBDB"
+                    color: "#E8E7E7"
                 }
             }
 
@@ -147,7 +147,7 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 font.family: "Arial"
                 font.pixelSize: 18
-                color: "#4A4646"
+                color: "#484545"
                 text: qsTr("% of my fee added to each transaction") + translationManager.emptyString
             }
         }
@@ -157,11 +157,11 @@ Item {
             anchors.right: parent.right
             font.family: "Arial"
             font.pixelSize: 15
-            color: "#4A4646"
+            color: "#484545"
             wrapMode: Text.Wrap
             text: qsTr("For every transaction, a small transaction fee is charged. This option lets you add an additional amount, " +
-                       "as a percentage of that fee, to your transaction to support Monero development. For instance, a 50% " +
-                       "autodonation take a transaction fee of 0.005 XMR and add a 0.0025 XMR to support Monero development.")
+                       "as a percentage of that fee, to your transaction to support Electronero development. For instance, a 50% " +
+                       "autodonation take a transaction fee of 0.05 XMR and add a 0.025 XMR to support Electronero development.")
                     + translationManager.emptyString
         }
         Column {
@@ -174,8 +174,8 @@ Item {
                 text: qsTr("Allow background mining?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
-                fontColor: "#4A4646"
+                background: "#F5F2F2"
+                fontColor: "#484545"
                 fontSize: 18
                 checked: true
             }
@@ -185,10 +185,10 @@ Item {
                 anchors.right: parent.right
                 font.family: "Arial"
                 font.pixelSize: 15
-                color: "#4A4646"
+                color: "#484545"
                 wrapMode: Text.Wrap
-                text: qsTr("Mining secures the Monero network, and also pays a small reward for the work done. This option " +
-                           "will let Monero mine when your computer is on mains power and is idle. It will stop mining when you continue working.")
+                text: qsTr("Mining secures the Electronero network, and also pays a small reward for the work done. This option " +
+                           "will let Electronero mine when your computer is on mains power and is idle. It will stop mining when you continue working.")
                       + translationManager.emptyString
             }
         }
