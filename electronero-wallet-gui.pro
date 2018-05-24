@@ -120,10 +120,6 @@ android {
 }
 
 
-
-QMAKE_CXXFLAGS += -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -Wformat-security -fstack-protector -fstack-protector-strong
-QMAKE_CFLAGS += -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Wformat -Wformat-security -fstack-protector -fstack-protector-strong
-
 ios {
     message("Host is IOS")
 
@@ -313,9 +309,8 @@ macx {
         -lssl \
         -lcrypto \
         -ldl
-    LIBS+= -framework PCSC
 
-    QMAKE_LFLAGS += -pie
+    
 }
 
 
