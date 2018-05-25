@@ -125,7 +125,7 @@ Rectangle {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             width: 42
-            color: containsMouse ? "#4C2161" : "#4C2161"
+            color: containsMouse ? "#f5d609" : "#f5d609"
 
             Image {
                 anchors.centerIn: parent
@@ -205,7 +205,7 @@ Rectangle {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             width: 42
-            color: containsMouse ? "#E04343" : "#4C2161"
+            color: containsMouse ? "#E04343" : "#f5d609"
 
             Image {
                 anchors.centerIn: parent

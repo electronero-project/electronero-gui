@@ -43,13 +43,13 @@ Rectangle {
     signal sweepUnmixableClicked()
 
     color: "transparent"
-    property string startLinkText: qsTr("<style type='text/css'>a {text-decoration: none; color: #9F6DBD; font-size: 14px;}</style><font size='2'> (</font><a href='#'>Start daemon</a><font size='2'>)</font>") + translationManager.emptyString
+    property string startLinkText: qsTr("<style type='text/css'>a {text-decoration: none; color: #DCC008; font-size: 14px;}</style><font size='2'> (</font><a href='#'>Start daemon</a><font size='2'>)</font>") + translationManager.emptyString
     property bool showAdvanced: false
 
     Clipboard { id: clipboard }
 
     function scaleValueToMixinCount(scaleValue) {
-        var scaleToMixinCount = [4,5,6,7,8,9,10,11,12,14,16,18,21,25];
+        var scaleToMixinCount = [4,5,6,7,8,9,10,11,12,14,16,18,21,25,26];
         if (scaleValue < scaleToMixinCount.length) {
             return scaleToMixinCount[scaleValue];
         } else {
@@ -235,10 +235,10 @@ Rectangle {
                   Layout.fillWidth: true
                   id: priorityDropdown
                   Layout.topMargin: 6
-                  shadowReleasedColor: "#4C2161"
-                  shadowPressedColor: "#3E045A"
-                  releasedColor: "#9F6DBD"
-                  pressedColor: "#4C2161"
+                  shadowReleasedColor: "#DCC008"
+                  shadowPressedColor: "#f5d609"
+                  releasedColor: "#DCC008"
+                  pressedColor: "#f5d609"
               }
           }
           // Make sure dropdown is on top
@@ -254,7 +254,7 @@ Rectangle {
               id: addressLine
               spacing: 0
               fontBold: true
-              labelText: qsTr("<style type='text/css'>a {text-decoration: none; color: #9F6DBD; font-size: 14px;}</style>\
+              labelText: qsTr("<style type='text/css'>a {text-decoration: none; color: #DCC008; font-size: 14px;}</style>\
                 Address <font size='2'>  ( </font> <a href='#'>Address book</a><font size='2'> )</font>")
                 + translationManager.emptyString
               labelButtonText: qsTr("Resolve") + translationManager.emptyString

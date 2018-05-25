@@ -95,7 +95,7 @@ Rectangle {
 
         Text {
             textFormat: Text.RichText
-            text: "<style type='text/css'>a {text-decoration: none; color: #4C2161; font-size: 14px;}</style>" +
+            text: "<style type='text/css'>a {text-decoration: none; color: #f5d609; font-size: 14px;}</style>" +
                   "<font size='+2'>" + qsTr("Blackballed outputs") + "</font>" + "<font size='2'> (</font><a href='#'>" + qsTr("help") + "</a><font size='2'>)</font><br>" +
                   qsTr("This sets which outputs are known to be spent, and thus not to be used as privacy placeholders in ring signatures.<br>") +
                   qsTr("You should only have to load a file when you want to refresh the list. Manual adding/removing is possible if needed.") + translationManager.emptyString
@@ -222,7 +222,7 @@ Rectangle {
 
         Text {
             textFormat: Text.RichText
-            text: "<style type='text/css'>a {text-decoration: none; color: #4C2161; font-size: 14px;}</style>" +
+            text: "<style type='text/css'>a {text-decoration: none; color: #f5d609; font-size: 14px;}</style>" +
                   "<font size='+2'>" + qsTr("Rings") + "</font>" + "<font size='2'> (</font><a href='#'>" + qsTr("help") + "</a><font size='2'>)</font><br>" +
                   qsTr("This records rings used by outputs spent on Monero on a key reusing chain, so that the same ring may be reused to avoid privacy issues.") + translationManager.emptyString
             wrapMode: Text.Wrap

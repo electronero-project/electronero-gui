@@ -64,7 +64,7 @@ Item {
             ListElement { dotColor: "#3CB15F" }
             ListElement { dotColor: "#3CB15F" }
             ListElement { dotColor: "#3CB15F" }
-            ListElement { dotColor: "#4C2161" }
+            ListElement { dotColor: "#f5d609" }
         }
 
         Repeater {
@@ -129,7 +129,7 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     font.family: "Arial"
                     font.pixelSize: 18
-                    color: "#4C2161"
+                    color: "#f5d609"
                     text: "50"
                     validator: IntValidator { bottom: 0; top: 100 }
                 }

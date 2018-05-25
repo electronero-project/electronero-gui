@@ -162,11 +162,11 @@ Rectangle {
         anchors.right: parent.right
 
 
-        Rectangle { height: 4; width: parent.width / 5; color: "#4C2161" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#9F6DBD" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#4C2161" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#9F6DBD" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#4C2161" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#f5d609" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#DCC008" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#f5d609" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#DCC008" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#f5d609" }
     }
 
     ColumnLayout {

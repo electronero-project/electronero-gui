@@ -719,7 +719,7 @@ void Wallet::setWalletCreationHeight(quint64 height)
 
 QString Wallet::getDaemonLogPath() const
 {
-    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/bitmonero.log";
+    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/electronero.log";
 }
 
 QString Wallet::getWalletLogPath() const

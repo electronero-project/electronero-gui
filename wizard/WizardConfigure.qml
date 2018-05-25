@@ -49,7 +49,7 @@ Item {
             id: dotsModel
             ListElement { dotColor: "#3CB15F" }
             ListElement { dotColor: "#3CB15F" }
-            ListElement { dotColor: "#4C2161" }
+            ListElement { dotColor: "#f5d609" }
             ListElement { dotColor: "#E8E7E7" }
         }
 

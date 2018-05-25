@@ -34,10 +34,10 @@ import "../components" as MoneroComponents
 Item {
     id: inlineButton
     height: rect.height * scaleRatio
-    property string shadowPressedColor: "#B32D00"
-    property string shadowReleasedColor: "#FF4304"
-    property string pressedColor: "#FF4304"
-    property string releasedColor: "#FF6C3C"
+    property string shadowPressedColor: "#DCC008"
+    property string shadowReleasedColor: "#f5d609"
+    property string pressedColor: "#DCC008"
+    property string releasedColor: "#f5d609"
     property string icon: ""
     property string textColor: "#FFFFFF"
     property int fontSize: 12 * scaleRatio
