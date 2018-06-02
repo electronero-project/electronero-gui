@@ -1,6 +1,6 @@
 #!/bin/bash
-MONERO_URL=git@github.com:shopglobal/electronero.git
-MONERO_BRANCH=nettype
+MONERO_URL=git@github.com:electronero/electronero.git
+MONERO_BRANCH=master
 
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -17,7 +17,7 @@ if [ ! -d $MONERO_DIR/src ]; then
 fi
 git submodule update --remote
 git -C $MONERO_DIR fetch
-git -C $MONERO_DIR checkout nettype
+git -C $MONERO_DIR checkout v12.2.2
 
 # get monero core tag
 get_tag
