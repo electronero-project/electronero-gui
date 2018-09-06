@@ -4,3 +4,4 @@
 [submodule "electronero"]
 	path = electronero
 	url = https://github.com/electronero/electronero
+	branch = boost-patch
