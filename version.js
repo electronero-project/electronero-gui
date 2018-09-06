@@ -1,2 +1,2 @@
-var GUI_VERSION = "6ac5b76"
-var GUI_MONERO_VERSION = "release"
+var GUI_VERSION = "12.3.3-omega"
+var GUI_MONERO_VERSION = "reset"
