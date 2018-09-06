@@ -3,5 +3,5 @@
 	url = https://github.com/monero-project/monero
 [submodule "electronero"]
 	path = electronero
-	url = https://github.com/shopglobal/electronero
+	url = https://github.com/electronero/electronero
 	branch = master
