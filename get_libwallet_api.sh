@@ -1,6 +1,6 @@
 #!/bin/bash
 MONERO_URL=git@github.com:electronero/electronero.git
-MONERO_BRANCH=boost-patch
+MONERO_BRANCH=release
 
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -17,7 +17,7 @@ if [ ! -d $MONERO_DIR/src ]; then
 fi
 git submodule update --remote
 git -C $MONERO_DIR fetch
-git -C $MONERO_DIR checkout 12.3.3-omega
+git -C $MONERO_DIR checkout boost-patch
 
 # get monero core tag
 get_tag
