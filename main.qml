@@ -73,7 +73,7 @@ ApplicationWindow {
     property bool remoteNodeConnected: false
     property bool androidCloseTapped: false;
     // Default daemon addresses
-    readonly property string localDaemonAddress : persistentSettings.nettype == NetworkType.MAINNET ? "localhost:28888" : persistentSettings.nettype == NetworkType.TESTNET ? "localhost:28081" : "localhost:38081"
+    readonly property string localDaemonAddress : persistentSettings.nettype == NetworkType.MAINNET ? "localhost:12090" : persistentSettings.nettype == NetworkType.TESTNET ? "localhost:33081" : "localhost:20393"
     property string currentDaemonAddress;
     property bool startLocalNodeCancelled: false
 
