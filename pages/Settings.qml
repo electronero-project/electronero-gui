@@ -52,6 +52,9 @@ Rectangle {
         }
 
         logLevelDropdown.update()
+
+        remoteNodeEdit.update(true)
+        bootstrapNodeEdit.update(false)
     }
 
     Clipboard { id: clipboard }

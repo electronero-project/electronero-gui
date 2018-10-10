@@ -253,6 +253,62 @@ int main(int argc, char *argv[])
         accountName = "My monero Account";
     }
 
+    QJsonArray localAddresses;
+    QJsonArray localPorts;
+    QJsonArray localCoins;
+    QJsonArray remoteAddresses;
+    QJsonArray remotePorts;
+    QJsonArray remoteCoins;
+
+    // Reading configuration file for addresses ports coins
+    QString val;
+    QFile file;
+    file.setFileName(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + "/node-options.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    qDebug() << "val " << val.length();
+    if(val.length() > 0){
+        QJsonDocument nodesConfig = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject nodesConfigObj = nodesConfig.object();
+        QJsonValue local = nodesConfigObj.value(QString("local"));
+        QJsonObject localObj = local.toObject();
+        localAddresses = localObj["addresses"].toArray();
+        localPorts = localObj["ports"].toArray();
+        localCoins = localObj["coins"].toArray();
+        QJsonValue remote = nodesConfigObj.value(QString("remote"));
+        QJsonObject remoteObj = remote.toObject();
+        remoteAddresses = remoteObj["addresses"].toArray();
+        remotePorts = remoteObj["ports"].toArray();
+        remoteCoins = remoteObj["coins"].toArray();
+    }
+    else{
+        // Fallback values in case something wrong reading config file
+        localAddresses.append("ronode.electroneropulse.org");
+        localAddresses.append("poolitaly.electroneropulse.org");
+        localAddresses.append("nynode.electroneropulse.org");
+        localPorts.append("12090");
+        localPorts.append("20393");
+        localCoins.append("ETNX");
+        localCoins.append("ETNXP");
+        remoteAddresses.append("ronode.electroneropulse.org");
+        remoteAddresses.append("poolitaly.electroneropulse.org");
+        remoteAddresses.append("nynode.electroneropulse.org");
+        remotePorts.append("12090");
+        remotePorts.append("20393");
+        remoteCoins.append("ETNX");
+        remoteCoins.append("ETNXP");
+    }
+
+    qWarning() << "local " << localAddresses << localPorts << localCoins;
+    qWarning() << "remote " << remoteAddresses << remotePorts << remoteCoins;
+
+    engine.rootContext()->setContextProperty("localAddresses", localAddresses);
+    engine.rootContext()->setContextProperty("localPorts", localPorts);
+    engine.rootContext()->setContextProperty("localCoins", localCoins);
+    engine.rootContext()->setContextProperty("remoteAddresses", remoteAddresses);
+    engine.rootContext()->setContextProperty("remotePorts", remotePorts);
+    engine.rootContext()->setContextProperty("remoteCoins", remoteCoins);
     engine.rootContext()->setContextProperty("defaultAccountName", accountName);
     engine.rootContext()->setContextProperty("applicationDirectory", QApplication::applicationDirPath());
 

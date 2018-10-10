@@ -54,6 +54,7 @@ GridLayout {
     property string lineEditBackgroundColor: "white"
     property string lineEditFontColor: "black"
     property bool lineEditFontBold: true
+    property bool isRemoteFlag: false
 
     signal editingFinished()
 
@@ -61,35 +62,120 @@ GridLayout {
         return daemonAddr.text.trim() + ":" + daemonPort.text.trim()
     }
 
+    function update(isRemote) {
+        isRemoteFlag = isRemote
+        if(nodeList.count == 0){
+            if(isRemote){
+                for (var i = 0; i < remoteAddresses.length; i++) {
+                    nodeList.append({'column1': remoteAddresses[i]});
+                    if(remoteAddresses[i] === daemonAddrText)
+                        nodeListDropdown.currentIndex = i;
+                }
+
+                for (i = 0; i < remoteCoins.length; i++) {
+                    portList.append({'column1': remoteCoins[i]});
+                    if(remotePorts[i] === daemonPortText)
+                        portListDropdown.currentIndex = i;
+                }
+            }
+            else{
+                for (i = 0; i < localAddresses.length; i++) {
+                    nodeList.append({'column1': localAddresses[i]});
+                    if(localAddresses[i] === daemonAddrText)
+                        nodeListDropdown.currentIndex = i;
+                }
+
+                for (i = 0; i < localCoins.length; i++) {
+                    portList.append({'column1': localCoins[i]});
+                    if(localPorts[i] === daemonPortText)
+                        portListDropdown.currentIndex = i;
+                }
+            }
+        }
+
+        nodeListDropdown.update();
+        portListDropdown.update();
+    }
+
     LineEdit {
         id: daemonAddr
-        Layout.fillWidth: true
-        placeholderText: qsTr("Remote Node Hostname / IP") + translationManager.emptyString
-        placeholderFontFamily: root.placeholderFontFamily
-        placeholderFontBold: root.placeholderFontBold
-        placeholderFontSize: root.placeholderFontSize
-        placeholderColor: root.placeholderColor
-        placeholderOpacity: root.placeholderOpacity
-        onEditingFinished: root.editingFinished()
-        borderColor: lineEditBorderColor
-        backgroundColor: lineEditBackgroundColor
-        fontColor: lineEditFontColor
-        fontBold: lineEditFontBold
+        visible: false
     }
 
     LineEdit {
         id: daemonPort
+        visible: false
+    }
+
+    ColumnLayout {
         Layout.fillWidth: true
-        placeholderText: qsTr("Port") + translationManager.emptyString
-        placeholderFontFamily: root.placeholderFontFamily
-        placeholderFontBold: root.placeholderFontBold
-        placeholderFontSize: root.placeholderFontSize
-        placeholderColor: root.placeholderColor
-        placeholderOpacity: root.placeholderOpacity
-        onEditingFinished: root.editingFinished()
-        borderColor: lineEditBorderColor
-        backgroundColor: lineEditBackgroundColor
-        fontColor: lineEditFontColor
-        fontBold: lineEditFontBold
+        Label {
+            id: nodeListLabel
+            Layout.topMargin: 14
+            text: qsTr("Address")
+            font.pixelSize: 16
+            font.bold: false
+            color: "#FFFFFF"
+       }
+
+        ListModel {
+             id: nodeList
+         }
+
+        StandardDropdown {
+            id: nodeListDropdown
+            objectName: "nodeListDropdown"
+            dataModel: nodeList
+            onChanged: {
+
+                console.log("nodeListDropdown changed: ", currentIndex);
+                daemonAddr.text = dataModel.get(currentIndex).column1;
+                root.editingFinished();
+            }
+            Layout.fillWidth: true
+            shadowReleasedColor: "#f5d609"
+            shadowPressedColor: "#B32D00"
+            releasedColor: "#363636"
+            pressedColor: "#202020"
+        }
+    }
+
+    ColumnLayout {
+        Layout.fillWidth: true
+        Label {
+            id: portListLabel
+            Layout.topMargin: 14
+            text: qsTr("Coin")
+            font.pixelSize: 16
+            font.bold: false
+            color: "#FFFFFF"
+        }
+
+        ListModel {
+             id: portList
+        }
+
+        StandardDropdown {
+            id: portListDropdown
+            dataModel: portList
+            currentIndex: 1;
+            onChanged: {
+                console.log("portListDropdown changed: ", currentIndex);
+                if(isRemoteFlag){
+                    daemonPort.text = remotePorts[currentIndex];
+                }
+                else {
+                    daemonPort.text = localPorts[currentIndex];
+                }
+
+                root.editingFinished();
+            }
+
+            Layout.fillWidth: true
+            shadowReleasedColor: "#f5d609"
+            shadowPressedColor: "#B32D00"
+            releasedColor: "#363636"
+            pressedColor: "#202020"
+        }
     }
 }
