@@ -18,6 +18,7 @@ fi
 git submodule update --remote
 git -C $MONERO_DIR fetch
 git -C $MONERO_DIR checkout 12.3.5-omega
+                  # up next 12.3.6-alpha
 
 # get monero core tag
 get_tag
@@ -37,10 +38,10 @@ git -C $MONERO_DIR config user.name "Electronero GUI"
 git -C $MONERO_DIR config user.email "president@worldvaporexpo.com"
 # check for PR requirements in most recent commit message (i.e requires #xxxx)
 for PR in $(git log --format=%B -n 1 | grep -io "requires #[0-9]*" | sed 's/[^0-9]*//g'); do
-    echo "Merging monero push request #$PR"
+    echo "Merging nero push request #$PR"
     # fetch pull request and merge
     git -C $MONERO_DIR fetch origin pull/$PR/head:PR-$PR
-    git -C $MONERO_DIR merge --quiet PR-$PR  -m "Merge monero PR #$PR"
+    git -C $MONERO_DIR merge --quiet PR-$PR  -m "Merge nero PR #$PR"
     BUILD_LIBWALLET=true
 done
 
