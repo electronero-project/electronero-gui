@@ -1,0 +1,12 @@
+{
+    "local": {
+         "addresses": ["ronode.electroneropulse.org","poolitaly.electroneropulse.org","nynode.electroneropulse.org"],
+         "coins": ["ETNX","ETNXP"],
+         "ports": ["12090","20393"]
+    },
+    "remote": {
+         "addresses": ["ronode.electroneropulse.org","poolitaly.electroneropulse.org","nynode.electroneropulse.org"],
+         "coins": ["ETNX","ETNXP"],
+         "ports": ["12090","20393"]
+     }
+ }
