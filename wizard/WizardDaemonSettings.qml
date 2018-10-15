@@ -48,6 +48,8 @@ ColumnLayout {
 
 
     function onPageOpened(settingsObject) {
+        remoteNodeEdit.update(true)
+        bootstrapNodeEdit.update(false)
     }
     function onWizardRestarted(){
     }
@@ -192,6 +194,11 @@ ColumnLayout {
                 placeholderColor: Style.legacy_placeholderFontColor
                 placeholderOpacity: 1.0
 
+                addressLabelColor: "#000000"
+                addressSelectedColor: "#000000"
+                portLabelColor: "#000000"
+                portSeletedColor: "#000000"
+
                 daemonAddrText: persistentSettings.bootstrapNodeAddress.split(":")[0].trim()
                 daemonPortText: {
                     var node_split = persistentSettings.bootstrapNodeAddress.split(":");
@@ -202,6 +209,7 @@ ColumnLayout {
                     }
                 }
             }
+            z: parent.z + 1
         }
 
         RowLayout {
@@ -234,6 +242,11 @@ ColumnLayout {
                 placeholderFontFamily: "Arial"
                 placeholderColor: Style.legacy_placeholderFontColor
                 placeholderOpacity: 1.0
+
+                addressLabelColor: "#000000"
+                addressSelectedColor: "#000000"
+                portLabelColor: "#000000"
+                portSeletedColor: "#000000"
 
                 lineEditBorderColor: Qt.rgba(0, 0, 0, 0.15)
                 lineEditBackgroundColor: "white"

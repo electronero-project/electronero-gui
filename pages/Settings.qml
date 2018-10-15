@@ -273,6 +273,7 @@ Rectangle {
                     }
                 }
             }
+            z: parent.z + 1
         }
 
         RowLayout {
@@ -300,6 +301,7 @@ Rectangle {
                     }
                 }
             }
+            z: parent.z + 1
         }
 
         RowLayout{

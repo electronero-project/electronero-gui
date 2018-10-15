@@ -42,6 +42,11 @@ GridLayout {
     property alias daemonAddrLabelText: daemonAddr.labelText
     property alias daemonPortLabelText: daemonPort.labelText
 
+    property alias addressLabelColor: nodeListLabel.color
+    property alias portLabelColor: portListLabel.color
+    property alias addressSelectedColor: nodeListDropdown.textColor
+    property alias portSeletedColor: portListDropdown.textColor
+
     // TODO: LEGACY; remove these placeHolder variables when
     // the wizards get redesigned to the black-theme
     property string placeholderFontFamily: MoneroComponents.Style.fontRegular.name
