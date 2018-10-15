@@ -195,9 +195,13 @@ ColumnLayout {
                 placeholderOpacity: 1.0
 
                 addressLabelColor: "#000000"
-                addressSelectedColor: "#000000"
+                addressSelectedColor: "#bfbfbf"
+                addressListBackgroundColor: "#bfbfbf"
+                addressListCurrentBackgroundColor: "#ffff4d"
                 portLabelColor: "#000000"
-                portSeletedColor: "#000000"
+                portSeletedColor: "#bfbfbf"
+                portListBackgroundColor: "#bfbfbf"
+                portListCurrentBackgroundColor: "#ffff4d"
 
                 daemonAddrText: persistentSettings.bootstrapNodeAddress.split(":")[0].trim()
                 daemonPortText: {
@@ -244,9 +248,13 @@ ColumnLayout {
                 placeholderOpacity: 1.0
 
                 addressLabelColor: "#000000"
-                addressSelectedColor: "#000000"
+                addressSelectedColor: "#bfbfbf"
+                addressListBackgroundColor: "#bfbfbf"
+                addressListCurrentBackgroundColor: "#ffff4d"
                 portLabelColor: "#000000"
-                portSeletedColor: "#000000"
+                portSeletedColor: "#bfbfbf"
+                portListBackgroundColor: "#bfbfbf"
+                portListCurrentBackgroundColor: "#ffff4d"
 
                 lineEditBorderColor: Qt.rgba(0, 0, 0, 0.15)
                 lineEditBackgroundColor: "white"

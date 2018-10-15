@@ -44,8 +44,12 @@ GridLayout {
 
     property alias addressLabelColor: nodeListLabel.color
     property alias portLabelColor: portListLabel.color
-    property alias addressSelectedColor: nodeListDropdown.textColor
-    property alias portSeletedColor: portListDropdown.textColor
+    property alias addressSelectedColor: nodeListDropdown.colorHeaderBackground
+    property alias portSeletedColor: portListDropdown.colorHeaderBackground
+    property alias addressListBackgroundColor: nodeListDropdown.pressedColor
+    property alias portListBackgroundColor: portListDropdown.pressedColor
+    property alias addressListCurrentBackgroundColor: nodeListDropdown.releasedColor
+    property alias portListCurrentBackgroundColor: portListDropdown.releasedColor
 
     // TODO: LEGACY; remove these placeHolder variables when
     // the wizards get redesigned to the black-theme
