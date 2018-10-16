@@ -40,7 +40,6 @@ import moneroComponents.Clipboard 1.0
 Rectangle {
     property bool viewOnly: false
     id: page
-
     color: "transparent"
 
     // fires on every page load
@@ -269,7 +268,10 @@ Rectangle {
                     }
                     onEditingFinished: {
                         persistentSettings.bootstrapNodeAddress = daemonAddrText ? bootstrapNodeEdit.getAddress() : "";
-                        console.log("setting bootstrap node to " + persistentSettings.bootstrapNodeAddress)
+                        console.log("setting bootstrap node to " + persistentSettings.bootstrapNodeAddress);
+                    }
+                    onCoinChanged: {
+                        root.coinChanged(currentCoin);
                     }
                 }
             }
@@ -297,7 +299,10 @@ Rectangle {
                     daemonPortText: rna.search(":") != -1 ? (rna.split(":")[1].trim() == "") ? "12090" : rna.split(":")[1] : ""
                     onEditingFinished: {
                         persistentSettings.remoteNodeAddress = remoteNodeEdit.getAddress();
-                        console.log("setting remote node to " + persistentSettings.remoteNodeAddress)
+                        console.log("setting remote node to " + persistentSettings.remoteNodeAddress);
+                    }
+                    onCoinChanged: {
+                        root.coinChanged(currentCoin);
                     }
                 }
             }

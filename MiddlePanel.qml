@@ -70,6 +70,7 @@ Rectangle {
     signal generatePaymentIdInvoked()
     signal getProofClicked(string txid, string address, string message);
     signal checkProofClicked(string txid, string address, string message, string signature);
+    signal coinChanged(string currentCoin);
 
     Image {
         anchors.left: parent.left
@@ -243,4 +244,18 @@ Rectangle {
             sweepUnmixableClicked()
         }
     }
+
+    /*
+
+
+    Connections {
+        ignoreUnknownSignals: false
+        target: settingsView
+        onCoinChangedSettings: {
+            console.log("MiddlePanel: onCoinChangedSettings");
+            //coinChanged();
+        }
+    }
+
+    */
 }
