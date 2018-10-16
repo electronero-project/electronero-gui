@@ -1,0 +1,13 @@
+init, notes;
+
+Parallell daemon will introduce multiple daemon functionality to the GUI. 
+-Offerring multi-coin storages
+-Compile time builds multi-daemon
+-Runtime runs specific daemon
+-Wallet storage is aware, and COIN-A wallet is not opened on COIN-B network even if WALLET-A and WALLET-B exist on COIN-A and COIN-B network, the cache store is not going to match in any case.
+-RPC switches port based on COIN
+-Wallet cache switches based on COIN
+
+Done:
+-User selection drop down | for remote node on Settings Panel interior of GUI
+-User selection drop down | for COIN on Daemon Settings panel before entering wallet
