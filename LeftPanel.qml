@@ -45,6 +45,7 @@ Rectangle {
     property alias progressBar : progressBar
     property alias daemonProgressBar : daemonProgressBar
     property alias minutesToUnlockTxt: unlockedBalanceLabel.text
+    property alias cardImageSource: cardImage.source
     property int titleBarHeight: 50
 
     signal dashboardClicked()
@@ -113,6 +114,7 @@ Rectangle {
                 width: 259 * scaleRatio
 
                 Image {
+                    id: cardImage
                     width: 259; height: 170
                     fillMode: Image.PreserveAspectFit
                     source: "images/card-background.png"

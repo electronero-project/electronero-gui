@@ -254,6 +254,7 @@ ApplicationWindow {
             currentWallet.transactionCreated.disconnect(onTransactionCreated)
             currentWallet.connectionStatusChanged.disconnect(onWalletConnectionStatusChanged)
             middlePanel.paymentClicked.disconnect(handlePayment);
+            middlePanel.coinChanged.disconnect(handleCoinChange);
             middlePanel.sweepUnmixableClicked.disconnect(handleSweepUnmixable);
             middlePanel.getProofClicked.disconnect(handleGetProof);
             middlePanel.checkProofClicked.disconnect(handleCheckProof);
@@ -309,6 +310,8 @@ ApplicationWindow {
         currentWallet.transactionCreated.connect(onTransactionCreated)
         currentWallet.connectionStatusChanged.connect(onWalletConnectionStatusChanged)
         middlePanel.paymentClicked.connect(handlePayment);
+        middlePanel.coinChanged.connect(handleCoinChange);
+        handleCoinChange(persistentSettings.currentCoin);
         middlePanel.sweepUnmixableClicked.connect(handleSweepUnmixable);
         middlePanel.getProofClicked.connect(handleGetProof);
         middlePanel.checkProofClicked.connect(handleCheckProof);
@@ -327,6 +330,17 @@ ApplicationWindow {
 
         console.log("initializing with daemon address: ", currentDaemonAddress)
         currentWallet.initAsync(currentDaemonAddress, 0, persistentSettings.is_recovering, persistentSettings.restore_height);
+    }
+
+    function handleCoinChange(currentCoin){
+        console.log("handleCoinChange " + currentCoin);
+
+        /*
+        if(currentCoin === "ETNXP")
+            leftPanel.cardImageSource = "images/card-background_xp.png"
+        else
+            leftPanel.cardImageSource = "images/card-background.png"
+        */
     }
 
     function walletPath() {
@@ -1037,6 +1051,7 @@ ApplicationWindow {
         property bool segregatePreForkOutputs: true
         property bool keyReuseMitigation2: true
         property int segregationHeight: 0
+        property string currentCoin: ""
     }
 
     // Information dialog

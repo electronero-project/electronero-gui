@@ -66,6 +66,7 @@ GridLayout {
     property bool isRemoteFlag: false
 
     signal editingFinished()
+    signal coinChanged(string currentCoin)
 
     function getAddress() {
         return daemonAddr.text.trim() + ":" + daemonPort.text.trim()
@@ -170,14 +171,19 @@ GridLayout {
             currentIndex: 1;
             onChanged: {
                 console.log("portListDropdown changed: ", currentIndex);
+                var currentCoin;
                 if(isRemoteFlag){
                     daemonPort.text = remotePorts[currentIndex];
+                    currentCoin = remoteCoins[currentIndex];
                 }
                 else {
                     daemonPort.text = localPorts[currentIndex];
+                    currentCoin = localCoins[currentIndex];
                 }
 
                 root.editingFinished();
+                root.coinChanged(currentCoin);
+                persistentSettings.currentCoin = currentCoin;
             }
 
             Layout.fillWidth: true
