@@ -83,7 +83,8 @@ GridLayout {
                 }
 
                 for (i = 0; i < remoteCoins.length; i++) {
-                    portList.append({'column1': remoteCoins[i]});
+                    //portList.append({'column1': remoteCoins[i]});
+                    portList.append({'column1': remotePorts[i]});
                     if(remotePorts[i] === daemonPortText)
                         portListDropdown.currentIndex = i;
                 }
@@ -96,7 +97,7 @@ GridLayout {
                 }
 
                 for (i = 0; i < localCoins.length; i++) {
-                    portList.append({'column1': localCoins[i]});
+                    portList.append({'column1': localPorts[i]});
                     if(localPorts[i] === daemonPortText)
                         portListDropdown.currentIndex = i;
                 }
@@ -155,7 +156,7 @@ GridLayout {
         Label {
             id: portListLabel
             Layout.topMargin: 14
-            text: qsTr("Coin")
+            text: qsTr("Port")
             font.pixelSize: 16
             font.bold: false
             color: "#FFFFFF"
