@@ -63,8 +63,8 @@ fi
 source ./utils.sh
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-MONERO_DIR=electronero
-MONEROD_EXEC=electronerod
+ELECTRONERO_DIR=electronero
+PULSED_EXEC=pulsed
 
 MAKE='make'
 if [[ $platform == *bsd* ]]; then
@@ -93,16 +93,16 @@ fi
 if [ "$platform" == "darwin" ]; then
     BIN_PATH=$BIN_PATH/electronero-wallet-gui.app/Contents/MacOS/
 elif [ "$platform" == "mingw64" ] || [ "$platform" == "mingw32" ]; then
-    MONEROD_EXEC=electronerod.exe
+    PULSED_EXEC=pulsed.exe
 fi
 
 # force version update
 get_tag
 echo "var GUI_VERSION = \"$TAGNAME\"" > version.js
-pushd "$MONERO_DIR"
+pushd "$ELECTRONERO_DIR"
 get_tag
 popd
-echo "var GUI_MONERO_VERSION = \"$TAGNAME\"" >> version.js
+echo "var GUI_ELECTRONERO_VERSION = \"$TAGNAME\"" >> version.js
 
 cd build
 if ! QMAKE=$(find_command qmake qmake-qt5); then
@@ -112,9 +112,9 @@ fi
 $QMAKE ../electronero-wallet-gui.pro "$CONFIG" || exit
 $MAKE || exit 
 
-# Copy electronerod to bin folder
+# Copy pulsed to bin folder
 if [ "$platform" != "mingw32" ] && [ "$ANDROID" != true ]; then
-cp ../$MONERO_DIR/bin/$MONEROD_EXEC $BIN_PATH
+cp ../$ELECTRONERO_DIR/bin/$PULSED_EXEC $BIN_PATH
 fi
 
 # make deploy
