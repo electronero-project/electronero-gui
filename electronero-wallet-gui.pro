@@ -445,7 +445,8 @@ OTHER_FILES += \
 DISTFILES += \
     notes.txt \
     electronero/src/wallet/CMakeLists.txt \
-    components/MobileHeader.qml
+    components/MobileHeader.qml \
+    RightPanel.qml
 
 
 # windows application icon

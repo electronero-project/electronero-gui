@@ -93,7 +93,7 @@ Rectangle {
 
     // card with monero logo
     Column {
-        visible: true
+        visible: false
         z: 2
         id: column1
         height: 200
@@ -223,20 +223,142 @@ Rectangle {
                     anchors.right: parent.right
                     height: 1
                 }
-              /* Disable twitter/news panel
+             }
+        }
+    }
+
+    // card with monero logo
+    Column {
+        visible: false
+        z: 2
+        id: column1Xp
+        height: 200
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: column1.bottom
+        anchors.topMargin: 0
+
+        RowLayout {
+            visible: true
+            Item {
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.topMargin: 20
+                anchors.leftMargin: 20
+                anchors.verticalCenter: parent.verticalCenter
+                height: 490 * scaleRatio
+                width: 259 * scaleRatio
+
                 Image {
-                    anchors.left: parent.left
-                    anchors.verticalCenter: logo.verticalCenter
-                    anchors.leftMargin: 19
-                    source: appWindow.rightPanelExpanded ? "images/expandRightPanel.png" :
-                                                           "images/collapseRightPanel.png"
+                    id: cardImageXp
+                    width: 259; height: 170
+                    fillMode: Image.PreserveAspectFit
+                    source: "images/card-background.png"
                 }
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: appWindow.rightPanelExpanded = !appWindow.rightPanelExpanded
+                Text {
+                    id: testnetLabelXp
+                    visible: persistentSettings.nettype != NetworkType.MAINNET
+                    text: (persistentSettings.nettype == NetworkType.TESTNET ? qsTr("Testnet") : qsTr("Stagenet")) + translationManager.emptyString
+                    anchors.top: parent.top
+                    anchors.topMargin: 8
+                    anchors.left: parent.left
+                    anchors.leftMargin: 192
+                    font.bold: true
+                    font.pixelSize: 12
+                    color: "#f33434"
                 }
-              */
+
+                Text {
+                    id: viewOnlyLabelXp
+                    visible: viewOnly
+                    text: qsTr("View Only") + translationManager.emptyString
+                    anchors.top: parent.top
+                    anchors.topMargin: 8
+                    anchors.right: testnetLabel.visible ? testnetLabel.left : parent.right
+                    anchors.rightMargin: 8
+                    font.pixelSize: 12
+                    font.bold: true
+                    color: "#ff9323"
+                }
+            }
+
+            Item {
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.topMargin: 20
+                anchors.leftMargin: 20
+                anchors.verticalCenter: parent.verticalCenter
+                height: 490 * scaleRatio
+                width: 50 * scaleRatio
+
+                Text {
+                    visible: !isMobile
+                    id: balanceTextXp
+                    anchors.left: parent.left
+                    anchors.leftMargin: 20
+                    anchors.top: parent.top
+                    anchors.topMargin: 76
+                    font.family: "Arial"
+                    color: "#FFFFFF"
+                    text: "N/A"
+                    // dynamically adjust text size
+                    font.pixelSize: {
+                        var digits = text.split('.')[0].length
+                        var defaultSize = 22;
+                        if(digits > 2) {
+                            return defaultSize - 1.1*digits
+                        }
+                        return defaultSize;
+                    }
+                }
+
+                Text {
+                    id: unlockedBalanceTextXp
+                    visible: true
+                    anchors.left: parent.left
+                    anchors.leftMargin: 20
+                    anchors.top: parent.top
+                    anchors.topMargin: 126
+                    font.family: "Arial"
+                    color: "#FFFFFF"
+                    text: "N/A"
+                    // dynamically adjust text size
+                    font.pixelSize: {
+                        var digits = text.split('.')[0].length
+                        var defaultSize = 20;
+                        if(digits > 3) {
+                            return defaultSize - 0.6*digits
+                        }
+                        return defaultSize;
+                    }
+                }
+
+                Label {
+                    id: unlockedBalanceLabelXp
+                    visible: true
+                    text: qsTr("Unlocked balance") + translationManager.emptyString
+                    anchors.left: parent.left
+                    anchors.leftMargin: 20
+                    anchors.top: parent.top
+                    anchors.topMargin: 110
+                }
+
+                Label {
+                    visible: !isMobile
+                    id: balanceLabelXp
+                    text: qsTr("Balance") + translationManager.emptyString
+                    fontSize: 14
+                    anchors.left: parent.left
+                    anchors.leftMargin: 20
+                    anchors.top: parent.top
+                    anchors.topMargin: 60
+                }
+                Item { //separator
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    height: 1
+                }
             }
         }
     }
@@ -247,7 +369,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.top: (isMobile)? parent.top : column1.bottom
+        anchors.top: (isMobile)? parent.top : column1Xp.bottom
         anchors.topMargin: (isMobile)? 0 : 32
         color: "transparent"
 
@@ -261,314 +383,314 @@ Rectangle {
             clip: true
 
 
-        Column {
+            Column {
 
-            id: menuColumn
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: parent.top
-            clip: true
-            property var previousButton: transferButton
-
-            // ------------- Dashboard tab ---------------
-
-            /*
-            MenuButton {
-                id: dashboardButton
+                id: menuColumn
                 anchors.left: parent.left
                 anchors.right: parent.right
-                text: qsTr("Dashboard") + translationManager.emptyString
-                symbol: qsTr("D") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                checked: true
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = dashboardButton
-                    panel.dashboardClicked()
+                anchors.top: parent.top
+                clip: true
+                property var previousButton: transferButton
+
+                // ------------- Dashboard tab ---------------
+
+                /*
+                MenuButton {
+                    id: dashboardButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Dashboard") + translationManager.emptyString
+                    symbol: qsTr("D") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    checked: true
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = dashboardButton
+                        panel.dashboardClicked()
+                    }
                 }
-            }
 
 
-            Rectangle {
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: dashboardButton.checked || transferButton.checked ? "#1C1C1C" : "#313131"
-                height: 1
-            }
-            */
-
-            // top border
-            Rectangle {
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
-
-            // ------------- Transfer tab ---------------
-            MenuButton {
-                id: transferButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Send") + translationManager.emptyString
-                symbol: qsTr("S") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = transferButton
-                    panel.transferClicked()
+                Rectangle {
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: dashboardButton.checked || transferButton.checked ? "#1C1C1C" : "#313131"
+                    height: 1
                 }
-            }
+                */
 
-            Rectangle {
-                visible: transferButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
-
-            // ------------- AddressBook tab ---------------
-
-            MenuButton {
-                id: addressBookButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Address book") + translationManager.emptyString
-                symbol: qsTr("B") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                under: transferButton
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = addressBookButton
-                    panel.addressBookClicked()
+                // top border
+                Rectangle {
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
                 }
-            }
 
-            Rectangle {
-                visible: addressBookButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
-
-            // ------------- Receive tab ---------------
-            MenuButton {
-                id: receiveButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Receive") + translationManager.emptyString
-                symbol: qsTr("R") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = receiveButton
-                    panel.receiveClicked()
+                // ------------- Transfer tab ---------------
+                MenuButton {
+                    id: transferButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Send") + translationManager.emptyString
+                    symbol: qsTr("S") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = transferButton
+                        panel.transferClicked()
+                    }
                 }
-            }
-            Rectangle {
-                visible: receiveButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
 
-            // ------------- History tab ---------------
+                Rectangle {
+                    visible: transferButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
 
-            MenuButton {
-                id: historyButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("History") + translationManager.emptyString
-                symbol: qsTr("H") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = historyButton
-                    panel.historyClicked()
-                }
-            }
-            Rectangle {
-                visible: historyButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
+                // ------------- AddressBook tab ---------------
 
-            // ------------- Advanced tab ---------------
-            MenuButton {
-                id: advancedButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Advanced") + translationManager.emptyString
-                symbol: qsTr("D") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = advancedButton
+                MenuButton {
+                    id: addressBookButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Address book") + translationManager.emptyString
+                    symbol: qsTr("B") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    under: transferButton
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = addressBookButton
+                        panel.addressBookClicked()
+                    }
                 }
-            }
-            Rectangle {
-                visible: advancedButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
 
-            // ------------- Mining tab ---------------
-            MenuButton {
-                id: miningButton
-                visible: !isAndroid && !isIOS
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Mining") + translationManager.emptyString
-                symbol: qsTr("M") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                under: advancedButton
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = miningButton
-                    panel.miningClicked()
+                Rectangle {
+                    visible: addressBookButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
                 }
-            }
 
-            Rectangle {
-                visible: miningButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: miningButton.checked || settingsButton.checked ? "#1C1C1C" : "#313131"
-                height: 1
-            }
-            // ------------- TxKey tab ---------------
-            MenuButton {
-                id: txkeyButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Prove/check") + translationManager.emptyString
-                symbol: qsTr("K") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                under: advancedButton
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = txkeyButton
-                    panel.txkeyClicked()
+                // ------------- Receive tab ---------------
+                MenuButton {
+                    id: receiveButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Receive") + translationManager.emptyString
+                    symbol: qsTr("R") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = receiveButton
+                        panel.receiveClicked()
+                    }
                 }
-            }
-            Rectangle {
-                visible: txkeyButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
-            // ------------- Shared RingDB tab ---------------
-            MenuButton {
-                id: sharedringdbButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Shared RingDB") + translationManager.emptyString
-                symbol: qsTr("S") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                under: advancedButton
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = sharedringdbButton
-                    panel.sharedringdbClicked()
+                Rectangle {
+                    visible: receiveButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
                 }
-            }
-            Rectangle {
-                visible: sharedringdbButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
+
+                // ------------- History tab ---------------
+
+                MenuButton {
+                    id: historyButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("History") + translationManager.emptyString
+                    symbol: qsTr("H") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = historyButton
+                        panel.historyClicked()
+                    }
+                }
+                Rectangle {
+                    visible: historyButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
+
+                // ------------- Advanced tab ---------------
+                MenuButton {
+                    id: advancedButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Advanced") + translationManager.emptyString
+                    symbol: qsTr("D") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = advancedButton
+                    }
+                }
+                Rectangle {
+                    visible: advancedButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
+
+                // ------------- Mining tab ---------------
+                MenuButton {
+                    id: miningButton
+                    visible: !isAndroid && !isIOS
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Mining") + translationManager.emptyString
+                    symbol: qsTr("M") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    under: advancedButton
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = miningButton
+                        panel.miningClicked()
+                    }
+                }
+
+                Rectangle {
+                    visible: miningButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: miningButton.checked || settingsButton.checked ? "#1C1C1C" : "#313131"
+                    height: 1
+                }
+                // ------------- TxKey tab ---------------
+                MenuButton {
+                    id: txkeyButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Prove/check") + translationManager.emptyString
+                    symbol: qsTr("K") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    under: advancedButton
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = txkeyButton
+                        panel.txkeyClicked()
+                    }
+                }
+                Rectangle {
+                    visible: txkeyButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
+                // ------------- Shared RingDB tab ---------------
+                MenuButton {
+                    id: sharedringdbButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Shared RingDB") + translationManager.emptyString
+                    symbol: qsTr("S") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    under: advancedButton
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = sharedringdbButton
+                        panel.sharedringdbClicked()
+                    }
+                }
+                Rectangle {
+                    visible: sharedringdbButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
 
 
-            // ------------- Sign/verify tab ---------------
-            MenuButton {
-                id: signButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Sign/verify") + translationManager.emptyString
-                symbol: qsTr("I") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                under: advancedButton
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = signButton
-                    panel.signClicked()
+                // ------------- Sign/verify tab ---------------
+                MenuButton {
+                    id: signButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Sign/verify") + translationManager.emptyString
+                    symbol: qsTr("I") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    under: advancedButton
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = signButton
+                        panel.signClicked()
+                    }
                 }
-            }
-            Rectangle {
-                visible: signButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
-            // ------------- Settings tab ---------------
-            MenuButton {
-                id: settingsButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Settings") + translationManager.emptyString
-                symbol: qsTr("E") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = settingsButton
-                    panel.settingsClicked()
+                Rectangle {
+                    visible: signButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
                 }
-            }
-            Rectangle {
-                visible: settingsButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
-            // ------------- Sign/verify tab ---------------
-            MenuButton {
-                id: keysButton
-                anchors.left: parent.left
-                anchors.right: parent.right
-                text: qsTr("Seed & Keys") + translationManager.emptyString
-                symbol: qsTr("Y") + translationManager.emptyString
-                dotColor: "#FFFFFF"
-                under: settingsButton
-                onClicked: {
-                    parent.previousButton.checked = false
-                    parent.previousButton = keysButton
-                    panel.keysClicked()
+                // ------------- Settings tab ---------------
+                MenuButton {
+                    id: settingsButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Settings") + translationManager.emptyString
+                    symbol: qsTr("E") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = settingsButton
+                        panel.settingsClicked()
+                    }
                 }
-            }
-            Rectangle {
-                visible: settingsButton.present
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: 16
-                color: "#313131"
-                height: 1
-            }
+                Rectangle {
+                    visible: settingsButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
+                // ------------- Sign/verify tab ---------------
+                MenuButton {
+                    id: keysButton
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    text: qsTr("Seed & Keys") + translationManager.emptyString
+                    symbol: qsTr("Y") + translationManager.emptyString
+                    dotColor: "#FFFFFF"
+                    under: settingsButton
+                    onClicked: {
+                        parent.previousButton.checked = false
+                        parent.previousButton = keysButton
+                        panel.keysClicked()
+                    }
+                }
+                Rectangle {
+                    visible: settingsButton.present
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: 16
+                    color: "#313131"
+                    height: 1
+                }
 
-        } // Column
+            } // Column
 
         } // Flickable
 
@@ -584,6 +706,7 @@ Rectangle {
         }
 
         NetworkStatusItem {
+            visible: false
             id: networkStatus
             anchors.left: parent.left
             anchors.right: parent.right
@@ -595,34 +718,25 @@ Rectangle {
         }
 
         ProgressBar {
+            visible: false
             id: progressBar
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: daemonProgressBar.top
             height: 48 * scaleRatio
             syncType: qsTr("Wallet")
-            visible: networkStatus.connected
+            //visible: networkStatus.connected
         }
 
         ProgressBar {
+            visible: false
             id: daemonProgressBar
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             syncType: qsTr("Daemon")
-            visible: networkStatus.connected
+            //visible: networkStatus.connected
             height: 62 * scaleRatio
         }
     } // menuRect
-
-
-
-    // indicate disabled state
-//    Desaturate {
-//        anchors.fill: parent
-//        source: parent
-//        desaturation: panel.enabled ? 0.0 : 1.0
-//    }
-
-
 }

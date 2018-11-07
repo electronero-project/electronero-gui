@@ -1369,19 +1369,19 @@ ApplicationWindow {
 
         RightPanel {
             id: rightPanel
+            anchors.top: mobileHeader.bottom
+            //anchors.left: middlePanel.right
             anchors.right: parent.right
             anchors.bottom: parent.bottom
-            width: appWindow.rightPanelExpanded ? 300 : 0
-            visible: appWindow.rightPanelExpanded
+            width: 300
         }
-
 
         MiddlePanel {
             id: middlePanel
             anchors.top: mobileHeader.bottom
             anchors.bottom: parent.bottom
             anchors.left: leftPanel.visible ?  leftPanel.right : parent.left
-            anchors.right: parent.right
+            anchors.right: rightPanel.left
             state: "Transfer"
         }
 
