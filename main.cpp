@@ -284,16 +284,14 @@ int main(int argc, char *argv[])
     }
     else{
         // Fallback values in case something wrong reading config file
-        localAddresses.append("ronode.electroneropulse.org");
-        localAddresses.append("poolitaly.electroneropulse.org");
-        localAddresses.append("nynode.electroneropulse.org");
+        localAddresses.append("nynode.electronero.org");
+	localAddresses.append("poolitaly.electronero.org");
         localPorts.append("12090");
         localPorts.append("20393");
         localCoins.append("ETNX");
         localCoins.append("ETNXP");
-        remoteAddresses.append("ronode.electroneropulse.org");
-        remoteAddresses.append("poolitaly.electroneropulse.org");
-        remoteAddresses.append("nynode.electroneropulse.org");
+	remoteAddresses.append("nynode.electronero.org");
+        remoteAddresses.append("poolitaly.electronero.org");
         remotePorts.append("12090");
         remotePorts.append("20393");
         remoteCoins.append("ETNX");
