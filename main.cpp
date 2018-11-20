@@ -287,15 +287,11 @@ int main(int argc, char *argv[])
         localAddresses.append("nynode.electronero.org");
 	localAddresses.append("poolitaly.electronero.org");
         localPorts.append("12090");
-        localPorts.append("20393");
         localCoins.append("ETNX");
-        localCoins.append("ETNXP");
 	remoteAddresses.append("nynode.electronero.org");
         remoteAddresses.append("poolitaly.electronero.org");
         remotePorts.append("12090");
-        remotePorts.append("20393");
         remoteCoins.append("ETNX");
-        remoteCoins.append("ETNXP");
     }
 
     qWarning() << "local " << localAddresses << localPorts << localCoins;
