@@ -1,23 +1,17 @@
-# Monero GUI
+# Electronero GUI
 
-Copyright (c) 2014-2018, The Monero Project
+Copyright (c) 2017-2018, The Electronero Project
 
 ## Development resources
 
-- Web: [getmonero.org](https://getmonero.org)
-- Forum: [forum.getmonero.org](https://forum.getmonero.org)
-- Mail: [dev@getmonero.org](mailto:dev@getmonero.org)
-- Github: [https://github.com/monero-project/monero-gui](https://github.com/monero-project/monero-gui)
-- IRC: [#monero-dev on Freenode](irc://chat.freenode.net/#monero-dev)
-
-## Vulnerability response
-
-- Our [Vulnerability Response Process](https://github.com/monero-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
-- We are also available via [HackerOne](https://hackerone.com/monero)
+- Web: [electronero.org](https://electronero.org)
+- Mail: [support@electroneropulse.org](mailto:support@electronero.org)
+- Github: [https://github.com/electronero-project/electronero-gui](https://github.com/electronero-project/electronero-gui)
+- Telegram: [@etnxp on Telegram](https://t.me/electronero)
 
 ## Introduction
 
-Monero is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+Electronero is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
 
 **Privacy:** Monero uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
 
@@ -25,31 +19,61 @@ Monero is a private, secure, untraceable, decentralised digital currency. You ar
 
 **Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Monero is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
 
-## About this project
+## About the GUI
 
-This is the GUI for the [core Monero implementation](https://github.com/monero-project/monero). It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Monero that uses the protocol and network in a compatible manner.
+Electronero and Electronero Pulse GUI was based on the [core Monero implementation](https://github.com/monero-project/monero). It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Monero that uses the protocol and network in a compatible manner.
 
 As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
 
+## Introduction
+
+Electronero is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+
+**Privacy:** Electronero uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
+
+**Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25 word mnemonic seed that is only displayed once, and can be written down to backup the wallet. Wallet files are encrypted with a passphrase to ensure they are useless if stolen.
+
+**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Monero is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
+
+## Sponsors
+
+<p align="center">
+  <img align="center" width="80" src="sponsors/mineful_logo.png"/>(https://mineful.com)
+</p>
+
 ## Supporting the project
 
-Monero is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Monero and Bitcoin donations can be made to **donate.getmonero.org** if using a client that supports the [OpenAlias](https://openalias.org) standard.
+Electronero is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Electronero donations can be made to the Electronero donation address via the `donate` command (type `help` in the command-line wallet for details). Else, here are our dev teams addresses. The funding goes to many developers who contribute and believe me, they are greatful for our assistance! 
 
-The Monero donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
+The Monero donation address is: `449JLhz9p6756c5tGACveuX76qa8UxMkFMd5uqG9SEJ3LcVJLjh4KvxJQ1Pf4yJmYgQRTrNPZhaga8eYynVqHfac9VWhF1m`
 
-The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
+The Bitcoin donation address is: `38jiBKevQHp8zhQpZ42bTvK4QpzzqWkA3K`
+
+The Electronero donation address is: `etnkHfFuanNeTe3q9dux4d9cRiLkUR4hDffvhfTp6nbhEJ5R8TY4vdyZjT4BtWxnvSJ5nfD64eCAQfKMJHSym2dj8PQqeiKmBM` 
+
+The Electroneum donation address is: `etnkHfFuanNeTe3q9dux4d9cRiLkUR4hDffvhfTp6nbhEJ5R8TY4vdyZjT4BtWxnvSJ5nfD64eCAQfKMJHSym2dj8PQqeiKmBM` 
+
+The Litecoin donation address is: `LfUVH96Ey1jj1FzJSriE9kpSvL2eNzEBG5`
+
+The Bitcoin Cash donation address is: `qpwvqz4kkhe96ggthpcg4aj5y62zftzxegwcl78a4u`
+
+The Sumokoin donation address is: `Sumoo47CGenbHfZtpCVV4PRMSsXP38idFdt5JSj7VuJrD1nABoPHTBHgR6owQJfn1JU8BiWWohw4oiefGEjAn4GmbFYYtCcfPeT`
+
+
+## About this project
+
+This is the core implementation of Monero. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Monero that uses the protocol and network in a compatible manner.
+
+As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
+
+**Anyone is welcome to contribute to Monero's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
 
 GUI development funding and/or some supporting services are also graciously provided by sponsors:
 
-[<img width="80" src="https://static.getmonero.org/images/sponsors/mymonero.png"/>](https://mymonero.com)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/kitware.png?1"/>](http://kitware.com)
-[<img width="100" src="https://static.getmonero.org/images/sponsors/dome9.png"/>](http://dome9.com)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/araxis.png"/>](http://araxis.com)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/jetbrains.png"/>](http://www.jetbrains.com/)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/navicat.png"/>](http://www.navicat.com/)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/symas.png"/>](http://www.symas.com/)
+<p align="center">
+  <img align="center" width="80" src="sponsors/hashfactory.png"/>(https://hashfactory.com)
+</p>
 
-There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
 
 ## License
 
@@ -83,7 +107,8 @@ Packaging for your favorite distribution would be a welcome contribution!
 
 2. Grab an up-to-date copy of the monero-gui repository
 
-	`git clone https://github.com/monero-project/monero-gui.git`
+	`git clone https://github.com/electronero-project/electronero
+	-gui.git`
 
 3. Go into the repository
 
