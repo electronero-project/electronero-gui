@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-# MONERO_URL=https://github.com/shopglobal/electronero.git
-# MONERO_BRANCH=master
+# MONERO_URL=https://github.com/electronero/electronero.git
+# MONERO_BRANCH=release
 CPU_CORE_COUNT=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || sysctl -n hw.ncpu)
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
