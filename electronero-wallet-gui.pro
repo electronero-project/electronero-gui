@@ -8,6 +8,9 @@ CONFIG += c++11 link_pkgconfig
 packagesExist(hidapi-libusb) {
     PKGCONFIG += hidapi-libusb
 }
+packagesExist(libpcsclite) {
+    PKGCONFIG += libpcsclite
+}
 QMAKE_CXXFLAGS += -fPIC -fstack-protector
 QMAKE_LFLAGS += -fstack-protector
 
