@@ -17,8 +17,8 @@ if [ ! -d $MONERO_DIR/src ]; then
 fi
 git submodule update --remote
 git -C $MONERO_DIR fetch
-git -C $MONERO_DIR checkout 12.3.6-gui
-               # up next 12.3.7-gui
+git -C $MONERO_DIR checkout 12.3.7-GUI
+               # up next 12.3.8-gui
 
 # get monero core tag
 get_tag
