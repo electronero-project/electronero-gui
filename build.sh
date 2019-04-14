@@ -109,7 +109,7 @@ if ! QMAKE=$(find_command qmake qmake-qt5); then
     echo "Failed to find suitable qmake command."
     exit 1
 fi
-$QMAKE ../litenero-wallet-gui.pro "$CONFIG" || exit
+$QMAKE ../electronero-wallet-gui.pro "$CONFIG" || exit
 $MAKE || exit 
 
 # Copy litenerod to bin folder
