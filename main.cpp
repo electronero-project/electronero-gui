@@ -285,13 +285,13 @@ int main(int argc, char *argv[])
     else{
         // Fallback values in case something wrong reading config file
         localAddresses.append("nynode.electronero.org");
-	localAddresses.append("poolitaly.electronero.org");
-        localPorts.append("12090");
-        localCoins.append("ETNX");
-	remoteAddresses.append("nynode.electronero.org");
+        localAddresses.append("poolitaly.electronero.org");
+        localPorts.append("18391");
+        localCoins.append("LTNX");
+        remoteAddresses.append("nynode.electronero.org");
         remoteAddresses.append("poolitaly.electronero.org");
-        remotePorts.append("12090");
-        remoteCoins.append("ETNX");
+        remotePorts.append("18391");
+        remoteCoins.append("LTNX");
     }
 
     qWarning() << "local " << localAddresses << localPorts << localCoins;
