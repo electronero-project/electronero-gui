@@ -1,12 +1,12 @@
 {
     "local": {
          "addresses": ["poolitaly.electronero.org","nynode.electronero.org"],
-         "coins": ["ETNX","ETNXP"],
-         "ports": ["12090","20393"]
+         "coins": ["ETNX","ETNXP","LTNX"],
+         "ports": ["12090","20393","18391"]
     },
     "remote": {
          "addresses": ["poolitaly.electronero.org","nynode.electronero.org"],
-         "coins": ["ETNX","ETNXP"],
-         "ports": ["12090","20393"]
+         "coins": ["ETNX","ETNXP","LTNX"],
+         "ports": ["12090","20393","18391"]
      }
  }
