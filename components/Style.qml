@@ -18,7 +18,7 @@ QtObject {
     property string inputBoxColor: "white"
     property string legacy_placeholderFontColor: "#BABABA"
 
-    property string buttonBackgroundColor: "#FA6800"
+    property string buttonBackgroundColor: "grey"
     property string buttonBackgroundColorHover: "#E65E00"
     property string buttonBackgroundColorDisabled: "#707070"
     property string buttonBackgroundColorDisabledHover: "#808080"
