@@ -264,6 +264,7 @@ int main(int argc, char *argv[])
     QString val;
     QFile file;
     file.setFileName(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + "/node-options.json");
+    qDebug() << "path " << QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     val = file.readAll();
     file.close();
