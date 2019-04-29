@@ -63,8 +63,8 @@ fi
 source ./utils.sh
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-MONERO_DIR=litenero
-MONEROD_EXEC=litenerod
+MONERO_DIR=goldnero
+MONEROD_EXEC=goldnerod
 
 MAKE='make'
 if [[ $platform == *bsd* ]]; then
@@ -91,9 +91,9 @@ if [ "$ANDROID" != true ] && ([ "$platform" == "linux32" ] || [ "$platform" == "
 fi
 
 if [ "$platform" == "darwin" ]; then
-    BIN_PATH=$BIN_PATH/litenero-wallet-gui.app/Contents/MacOS/
+    BIN_PATH=$BIN_PATH/goldnero-wallet-gui.app/Contents/MacOS/
 elif [ "$platform" == "mingw64" ] || [ "$platform" == "mingw32" ]; then
-    MONEROD_EXEC=litenerod.exe
+    MONEROD_EXEC=goldnerod.exe
 fi
 
 # force version update
@@ -112,7 +112,7 @@ fi
 $QMAKE ../electronero-wallet-gui.pro "$CONFIG" || exit
 $MAKE || exit 
 
-# Copy litenerod to bin folder
+# Copy goldnerod to bin folder
 if [ "$platform" != "mingw32" ] && [ "$ANDROID" != true ]; then
 cp ../$MONERO_DIR/bin/$MONEROD_EXEC $BIN_PATH
 fi
