@@ -11,7 +11,7 @@ source $ROOT_DIR/utils.sh
 
 
 INSTALL_DIR=$ROOT_DIR/wallet
-MONERO_DIR=$ROOT_DIR/electronero
+MONERO_DIR=$ROOT_DIR/goldnero
 
 
 mkdir -p $MONERO_DIR/build/release
