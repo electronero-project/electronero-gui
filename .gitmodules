@@ -5,3 +5,9 @@
 	path = electronero
 	url = https://github.com/electronero/electronero
 	branch = release
+[submodule "goldnero"]
+	path = goldnero
+	url = https://github.com/goldnero-project/goldnero
+[submodule "litenero"]
+	path = litenero
+	url = https://github.com/litenero-project/litenero
