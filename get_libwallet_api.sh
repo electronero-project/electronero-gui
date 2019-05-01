@@ -1,5 +1,5 @@
 #!/bin/bash
-MONERO_URL=https://github.com/electronero/electronero.git
+MONERO_URL=https://github.com/goldnero-project/goldnero.git
 MONERO_BRANCH=release
 
 pushd $(pwd)
@@ -8,12 +8,12 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $ROOT_DIR/utils.sh
 
 INSTALL_DIR=$ROOT_DIR/wallet
-MONERO_DIR=$ROOT_DIR/electronero
+MONERO_DIR=$ROOT_DIR/goldnero
 BUILD_LIBWALLET=false
 
 # init and update electronero submodule
 if [ ! -d $MONERO_DIR/src ]; then
-    git submodule init electronero
+    git submodule init goldnero
 fi
 git submodule update --remote
 git -C $MONERO_DIR fetch

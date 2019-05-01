@@ -2,4 +2,4 @@
 
 set QMLSCENE_DEVICE=softwarecontext
 
-start /b electronero-wallet-gui.exe
+start /b goldnero-wallet-gui.exe

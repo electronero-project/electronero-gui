@@ -2,7 +2,7 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-WALLET_ROOT=$$PWD/electronero
+WALLET_ROOT=$$PWD/goldnero
 
 CONFIG += c++11 link_pkgconfig
 packagesExist(hidapi-libusb) {
