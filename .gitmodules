@@ -1,4 +1,4 @@
 [submodule "goldnero"]
 	path = goldnero
 	url = https://github.com/goldnero/goldnero
-        branch = release
+	branch = release
