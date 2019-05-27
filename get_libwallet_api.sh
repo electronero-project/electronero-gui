@@ -1,5 +1,5 @@
 #!/bin/bash
-MONERO_URL=https://github.com/goldnero-project/goldnero.git
+MONERO_URL=https://github.com/goldnero/goldnero.git
 MONERO_BRANCH=release
 
 pushd $(pwd)
