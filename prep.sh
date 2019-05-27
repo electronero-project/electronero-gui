@@ -1,5 +1,5 @@
 #!/bin/bash
-MONERO_URL=https://github.com/goldnero-project/goldnero.git
+MONERO_URL=https://github.com/goldnero/goldnero.git
 MONERO_BRANCH=release
 
 pushd $(pwd)
@@ -17,8 +17,8 @@ if [ ! -d $MONERO_DIR/src ]; then
 fi
 git submodule update --remote
 git -C $MONERO_DIR fetch
-git -C $MONERO_DIR checkout 12.3.7-GUI
-               # up next 12.3.8-gui
+git -C $MONERO_DIR checkout 1.0.0
+               # up next 1.0.1
 
 # get monero core tag
 get_tag
