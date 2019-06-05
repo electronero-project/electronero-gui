@@ -286,11 +286,11 @@ int main(int argc, char *argv[])
         // Fallback values in case something wrong reading config file
         localAddresses.append("nynode.electronero.org");
         localAddresses.append("poolitaly.electronero.org");
-        localPorts.append("18390");
+        localPorts.append("18100");
         localCoins.append("LTNX");
         remoteAddresses.append("nynode.electronero.org");
         remoteAddresses.append("poolitaly.electronero.org");
-        remotePorts.append("18391");
+        remotePorts.append("18100");
         remoteCoins.append("LTNX");
     }
 
