@@ -458,7 +458,7 @@ OTHER_FILES += \
 
 DISTFILES += \
     notes.txt \
-    electronero/src/wallet/CMakeLists.txt \
+    goldnero/src/wallet/CMakeLists.txt \
     components/MobileHeader.qml
 
 
